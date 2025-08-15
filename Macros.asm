@@ -20,14 +20,32 @@
         syscall
 %endmacro
 
-%macro clearBuffer 0
-    mov rdi, buffer
-    mov rcx, 256
-    xor rax, rax
-    rep stosb
+%macro printInt 1
+    xor rcx, rcx
+    mov rbx, 10
+    mov r8, %1
+    push r8
+
+    %%.convertLoop:
+        mov rax, r8
+        div rbx
+        mov r9, rdx
+        add r9, '0'
+
+    %%.endConvertLoop:
+
+    %%.countLoop:
+
+    %%.endCountLoop:
 %endmacro
 
 %macro read 0
+    %%.clearBuffer:
+        mov rdi, buffer
+        mov rcx, 256
+        xor rax, rax
+        rep stosb
+
     mov rax, 0
     mov rdi, 0
     mov rsi, buffer
