@@ -2,6 +2,7 @@
 It's a game inspired in 99 Nights made in roblox, so i decided to make it in version of assembly.
 
 Convension:
+
     M = Message
     P = Prompt
 
@@ -13,6 +14,7 @@ Convension:
     NAME_UPPER = constant
 
 Examples:
+
     M_S_INIT = Constant Message of type String
         -> Hello, world!
 
